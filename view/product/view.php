@@ -40,8 +40,9 @@
                                         <span>
                                             <span>US $<?php echo $product['price']; ?></span>
                                             <label>Количество:</label>
-                                            <input type="text" value="3" />
-                                            <button type="button" class="btn btn-fefault cart">
+                                            <input type="text" class="count-add-product" value="1" />
+                                            <button type="button" class="btn btn-fefault cart add-cart-product" 
+                                                    data-id="<?php echo $product['id']; ?>">
                                                 <i class="fa fa-shopping-cart"></i>
                                                 В корзину
                                             </button>

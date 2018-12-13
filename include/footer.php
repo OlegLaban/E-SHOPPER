@@ -2,7 +2,7 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
-                        <p class="pull-left">Copyright © 2015</p>
+                        <p class="pull-left">Copyright © 2018</p>
                         <p class="pull-right">Курс PHP Start</p>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
         <script src="/template/js/price-range.js"></script>
         <script src="/template/js/jquery.prettyPhoto.js"></script>
         <script src="/template/js/main.js"></script>
-       
+        <script type='text/javascript' src='/template/js/slider.js'></script>
         
         <script>
             $(document).ready(function(){
@@ -24,6 +24,19 @@
                     var id = $(this).attr("data-id");
                         $.ajax({
                            url:"/cart/addAjax/" + id,
+                           type:"POST",
+                           data:{},
+                           dataType:"html",
+                           success:function sucFunc(data){
+                                     $("#cart-count").html(data);
+                                    }        
+                        });
+                        return false;
+                });
+                $(".add-cart-product").click(function(){
+                    var id = $(this).attr("data-id"), count = $(".count-add-product").val();
+                        $.ajax({
+                           url:"/cart/addAjax/" + id + "/" + count,
                            type:"POST",
                            data:{},
                            dataType:"html",
@@ -47,8 +60,9 @@
                 document.onresize = heightChange();
                 heightChange();
             });
-           
-           
+          
+        
         </script>
+        
     </body>
 </html>

@@ -2,10 +2,10 @@
 
 class Cart 
 {
-    public static function addProduct($id)
+    public static function addProduct($id, $count)
     {
         $id = intval($id);
-        
+        $count = intval($count);
         //Пустой массив для товаров в корзине.
         $productsInCart = array();
         
@@ -16,12 +16,21 @@ class Cart
         }
         
         //Если товар есть в корзине, но был добавлен еще раз, увеличиваем колличество
-        if(array_key_exists($id, $productsInCart)){
-            $productsInCart[$id]++;
-        }else{
-            //Добавляем новыйтовар в корзину
-            $productsInCart[$id] = 1;
-        }
+        if($count > 0){
+            if(array_key_exists($id, $productsInCart)){
+                $productsInCart[$id] += $count;
+            }else{
+                //Добавляем новыйтовар в корзину
+                $productsInCart[$id] = $count;
+            }
+        }/*else {
+            if(array_key_exists($id, $productsInCart)){
+                $productsInCart[$id]++;
+            }else{
+                //Добавляем новыйтовар в корзину
+                $productsInCart[$id] = 1;
+             }
+        }*/
         
         $_SESSION['products'] = $productsInCart;
         

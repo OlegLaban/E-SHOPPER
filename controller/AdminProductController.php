@@ -46,7 +46,7 @@ class AdminProductController extends AdminBase
         
         $categoriesList = Category::getAdminCategoriesList();
         
-        $product = Product::getProductById($id);
+       
         
         $productUpdate = array();
         
@@ -68,7 +68,7 @@ class AdminProductController extends AdminBase
             
             
         }
-        
+        $product = Product::getProductById($id);
         require_once(ROOT . '/view/admin_product/update.php');
         return true;
     }

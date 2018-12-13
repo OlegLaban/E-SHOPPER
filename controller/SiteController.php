@@ -8,6 +8,8 @@ class SiteController {
         
         $lastProduct = Product::getLatestProducts();
         
+        $recomendedProduct = Product::getRecomendedProducts();
+        
         require_once(ROOT . "/view/site/index.php");
         
         return true;

@@ -188,6 +188,14 @@ class Product
        
    }
    
+   public static function getRecomendedProducts(){
+       $db = Db::getConnection();
+       
+       $sql = "SELECT * FROM `product` WHERE `is_recomended` = 1";
+       $result = $db->query($sql);
+       return $result->fetchAll(PDO::FETCH_ASSOC);
+   }
+   
    public static function fileUpload($dataFile)
    {
        if(count($dataFile) > 0){
@@ -197,6 +205,8 @@ class Product
            $fullpath = ROOT . $path;
            move_uploaded_file($tmp_name, $fullpath);
            return $path;
+       }else{
+           return $product['image'];
        }
        return false;
        

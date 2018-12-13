@@ -26,10 +26,10 @@ class CartController {
         
     }
     
-    public function actionAdd($id)
+    public function actionAdd($id, $count = 1)
     {
         //Добавляем товар в корзину
-        Cart::addProduct($id);
+        Cart::addProduct($id, $count);
         
         //Возвращаем пользователя на страницу
         $referrer = $_SERVER['HTTP_REFERER'];
@@ -37,8 +37,8 @@ class CartController {
         return true;
     }
     
-    public function actionaddAjax($id){
-        echo Cart::addProduct($id);
+    public function actionaddAjax($id, $count = 1){
+        echo Cart::addProduct($id, $count);
         
        
         return true;

@@ -13,6 +13,7 @@
         <link href="/template/css/animate.css" rel="stylesheet">
         <link href="/template/css/main.css" rel="stylesheet">
         <link href="/template/css/responsive.css" rel="stylesheet">
+        <link href="/template/css/slider.css" rel="stylesheet">
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
@@ -96,7 +97,7 @@
                                         </ul>
                                     </li> 
                                     <li><a href="#">О магазине</a></li>
-                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="/contact/">Контакты</a></li>
                                 </ul>
                             </div>
                         </div>

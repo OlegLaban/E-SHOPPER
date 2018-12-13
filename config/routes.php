@@ -13,7 +13,7 @@ return array(
     'contact' => 'site/contact',
     
     //Пути для контроллера корзины 
-    'cart/addAjax/([0-9]+)'=> 'cart/addAjax/$1',
+    'cart/addAjax/([0-9]+)/([0-9]+)'=> 'cart/addAjax/$1/$2',
     'cart/add' => 'cart/add',
     'cart/checkout' => 'cart/checkout',
     'cart' => 'cart/index',
