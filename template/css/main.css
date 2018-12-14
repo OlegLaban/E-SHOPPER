@@ -2531,3 +2531,12 @@ h2.title {
     width:100% !important;
 }
 
+#countDelProduct{
+    width:50px;
+    text-align: center;
+}
+
+#butDelProduct{
+    border: none;
+    background-color: inherit;
+}

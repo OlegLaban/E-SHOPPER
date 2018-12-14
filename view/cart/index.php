@@ -35,6 +35,8 @@
                                 <th>Название</th>
                                  <th>Количество, шт.</th>
                                 <th>Стоимость в руб.</th>
+                                <th>Удалить шт.</th>
+                                <th>Удалить товар полностью.</th>
                             </tr>
                             <?php foreach($products as $product): ?>
                             <tr>
@@ -46,6 +48,16 @@
                                 </td>
                                 <td><?php echo $productsInCart[$product['id']]; ?></td>
                                 <td><?php echo $product['price']; ?></td> 
+                                <td> 
+                                    <form action="/cart/delete/" method="POST">
+                                        <input id="countDelProduct" type="number" value="1" name="count"> 
+                                        <input type="hidden" name="id" value="<?php echo $product['id']; ?>" >
+                                        <button id="butDelProduct" type="submit" name="submit"><i class="fa fa-times"></i></button>
+                                    </form>
+                                    
+                                    
+                                </td>
+                                <td> <a href="/cart/deleteAll/<?php echo $product['id']; ?>"><i class="fa fa-times"></i></a></td>
                             </tr>
                             
                             <?php endforeach; ?>

@@ -7,10 +7,9 @@ class CartController {
         $categories = Category::getCategoriesList();
         
         $productsInCart = false;
-        
-        //Получаем данные из карзины
+       //Получаем данные из корзины
         $productsInCart = Cart::getProducts();
-        
+       
         if($productsInCart){
             //Получаем полную информацию о товарах для списка
             $productsIds = array_keys($productsInCart);
@@ -41,6 +40,34 @@ class CartController {
         echo Cart::addProduct($id, $count);
         
        
+        return true;
+    }
+    
+    public function actionDeleteAll($id)
+    {
+        $id = intval($id);
+        Cart::deleteAllProduct($id);
+        
+        //if(count($_SESSION['products'] > 0)){
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+        //}else{
+          //  header("Location: /cart/");
+        //}
+        
+        
+        return true;
+    }
+    
+    public function actionDelete()
+    {
+        if(isset($_POST['submit'])){
+            $id = intval($_POST['id']);
+            $count = intval($_POST['count']);
+            Cart::deleteProducts($id, $count);
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+        }
+        
+        
         return true;
     }
     

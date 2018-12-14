@@ -23,14 +23,7 @@ class Cart
                 //Добавляем новыйтовар в корзину
                 $productsInCart[$id] = $count;
             }
-        }/*else {
-            if(array_key_exists($id, $productsInCart)){
-                $productsInCart[$id]++;
-            }else{
-                //Добавляем новыйтовар в корзину
-                $productsInCart[$id] = 1;
-             }
-        }*/
+        }
         
         $_SESSION['products'] = $productsInCart;
         
@@ -72,6 +65,31 @@ class Cart
         }
         return $total;
     }
+    
+    public static function deleteAllProduct($id)
+    {
+        unset($_SESSION['products'][$id]);
+        var_dump($_SESSION['products']);
+    }
+    
+    public static function deleteProducts($id, $count = 1)
+    {
+        $productsInCart = array();
+        
+        if(isset($_SESSION['products'])){
+            $productsInCart = $_SESSION['products'];
+        }
+        
+        if(array_key_exists($id, $productsInCart)){
+            if($productsInCart[$id] <= $count){
+                unset($productsInCart[$id]);
+            }else{
+                $productsInCart[$id] -= $count;
+            }
+            $_SESSION['products'] = $productsInCart;
+        }
+    }
+    
     public static function clear()
      {
         if(isset($_SESSION['products'])){
