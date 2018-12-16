@@ -32,7 +32,6 @@ function slider(maxWidth, maxHeight, countItems, countMoveElements, difference, 
                     allWidth = (divImage[i].offsetWidth + marginLeftDivImage + marginRightDivImage) * divImage.length;
                 }
             widthOneElement = allWidth / divImage.length;
-            //widthSlider = allWidth,
             sliderWrap.style = "width:" + allWidth + "px;";
             nowDiv.style = "width:" + (widthOneElement * countItems) + "px;";
             mainSlider.style = "width:" + (widthOneElement * countItems + difference) +  "px;";
@@ -68,11 +67,11 @@ if(document.getElementById("slider") != null){
 
 /*
  * Первый параметр это максимальная ширина картинки.
- * Второй параметр это максивальная высота картинки.
+ * Второй параметр это максимальная высота картинки.
  * Третий параметр это кол-во отображаемых картинок в области слайдера.
  * Четвертый параметр это колличество картинок перемещаемых за раз.
  * Пятый параметр это разница между основным блоком слайдера и первым дочерним (влияет на положение стрелок).
- * Шестой параметр это интревал работы слайдера в секндах.
+ * Шестой параметр это интревал работы слайдера в секундах.
  */
 
 

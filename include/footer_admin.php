@@ -32,6 +32,17 @@
             return false;
         });
     });
+    
+    function heightChange(){
+                   var heigthAllElements = $(".page-wrapper")[0].clientHeight  + $('footer')[0].clientHeight,
+                    heigthDocument = document.documentElement.clientHeight;
+                   if(heigthAllElements < heigthDocument){
+                       var marginTopFooter = heigthDocument - heigthAllElements;
+                       $('footer')[0].style = "margin-top: " + marginTopFooter + "px;";
+                   } 
+                }
+                document.onresize = heightChange();
+                heightChange();
 </script>
 
 </body>
