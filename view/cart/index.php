@@ -29,7 +29,7 @@
                       <?php if(isset($products)): ?>
                     <div class="col-sm-9 padding-right">
                         
-                        <table>
+                        <table class="user_Cart_Table">
                             <tr>
                                 <th>Код товара</th>
                                 <th>Название</th>

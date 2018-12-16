@@ -2540,3 +2540,7 @@ h2.title {
     border: none;
     background-color: inherit;
 }
+
+.user_Cart_Table{
+    text-align: center;
+}
