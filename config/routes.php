@@ -13,12 +13,14 @@ return array(
     'contact' => 'site/contact',
     
     //Пути для контроллера корзины 
+    
     'cart/delete' => 'cart/delete',
     'cart/deleteAll/([0-9]+)' => 'cart/deleteAll/$1',
     'cart/addAjax/([0-9]+)/([0-9]+)'=> 'cart/addAjax/$1/$2',
     'cart/add' => 'cart/add',
     'cart/checkout' => 'cart/checkout',
     'cart' => 'cart/index',
+    
     
     //Пути для категорий (админ панель)
     'admin/category/delete/([0-9]+)' => 'adminCategory/delete/$1',
